@@ -1,19 +1,19 @@
 #include <iostream>
 #include <iomanip>
-#include <cmath>
+#include <typeinfo>
 int main(){
-    double a, b;
-    std::cout << "Введите перове число: ";
-    std::cin >> a;
-    std::cout << "Введите второе число: ";
-    std::cin >> b;
-    std::cout << std::fixed << std::setprecision(2);
-    std::cout << "Сумма: " << a+b << "\n";
-    std::cout << "Разность: " << a-b << "\n";
-    std::cout << "Произведение: " << a*b << "\n";
-    std::cout << "Деление: " << a/b << "\n";
-    std::cout << "Целочисленное деление: " << static_cast<int>(a) / static_cast<int>(b) << "\n";
-    std::cout << "Остаток: " << std::fmod(a,b) << "\n";
-    std::cout << "Степень: " << std::pow(a,b) << "\n";
+    int integer;
+    double decimal;
+    std::string text;
+    std::cout << "Введите целое число: ";
+    std::cin >> integer;
+    std::cout << "Введите дробное число: ";
+    std::cin >> decimal;
+    std::cin.ignore();
+    std::cout << "Введите строку: ";
+    std::getline(std::cin, text);
+    std::cout << "Значение: " << integer << ", тип: " << typeid(integer).name() <<"\n";
+    std::cout << "Значение: " << decimal << ", тип: " << typeid(decimal).name() <<"\n";
+    std::cout << "Значение: " << text << ", тип: " << typeid(text).name() <<"\n";
     return 0;
 }
